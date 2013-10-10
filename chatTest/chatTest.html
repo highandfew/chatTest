@@ -1,13 +1,19 @@
 <head>
-  <title>chatTest</title>
+	<title>chatTest</title>
 </head>
 
 <body>
-  {{> hello}}
+	{{> chatBox}}
 </body>
 
-<template name="hello">
-  <h1>Hello World!</h1>
-  {{greeting}}
-  <input type="button" value="Click" />
+<template name="chatBox">
+	<textarea class="chatMessage"></textarea>
+	<input type="button" class="chatBtn" value="Click" />
+	<div>{{> chatDisplay}}</div>
+</template>
+
+<template name="chatDisplay">
+	{{#each chatEntry}}
+		<div>{{msg}}</div>
+	{{/each}}
 </template>
